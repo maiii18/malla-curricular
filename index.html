@@ -169,3 +169,116 @@
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Malla Curricular - Sociología</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h2 {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-left: 6px solid #3498db;
+      border-radius: 4px;
+      margin-top: 40px;
+    }
+    h3 {
+      margin-top: 20px;
+      color: #2c3e50;
+    }
+    .materia {
+      padding: 10px 14px;
+      margin: 6px;
+      border-radius: 10px;
+      border: none;
+      font-weight: 500;
+      display: inline-block;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .materia:hover {
+      transform: scale(1.03);
+      background-color: #e0e0e0;
+    }
+    .obligatoria { background-color: #d0e6f7; }
+    .electiva { background-color: #fde2e4; }
+    .ingles { background-color: #fff0c1; }
+    .core { background-color: #e8daef; }
+    .revalidada {
+      background-color: #f5c6cb;
+      text-decoration: line-through;
+    }
+    .completa {
+      background-color: #d4edda !important;
+      text-decoration: line-through;
+      color: #555;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Malla Curricular - Sociología UCU</h1>
+
+  <!-- Aquí siguen todas las secciones y materias como estaban antes -->
+
+  <!-- El script interactivo -->
+  <script>
+    const STORAGE_KEY = 'materiasCompletas';
+
+    function guardarEstado() {
+      const materiasCompletas = Array.from(document.querySelectorAll('.materia.completa'))
+        .map(m => m.textContent.trim());
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(materiasCompletas));
+    }
+
+    function cargarEstado() {
+      const guardadas = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+      document.querySelectorAll('.materia').forEach(m => {
+        if (guardadas.includes(m.textContent.trim())) {
+          m.classList.add('completa');
+        }
+      });
+    }
+
+    document.querySelectorAll('.materia').forEach(m => {
+      m.addEventListener('click', () => {
+        m.classList.toggle('completa');
+        guardarEstado();
+        manejarActivacionIngles();
+      });
+    });
+
+    function manejarActivacionIngles() {
+      for (let i = 1; i <= 6; i++) {
+        const nivelActual = document.querySelector(`.materia.ingles[data-nivel='${i}']`);
+        const nivelSiguiente = document.querySelector(`.materia.ingles[data-nivel='${i + 1}']`);
+        if (nivelActual && nivelSiguiente) {
+          if (nivelActual.classList.contains('completa')) {
+            nivelSiguiente.style.pointerEvents = 'auto';
+            nivelSiguiente.style.opacity = 1;
+          } else {
+            nivelSiguiente.style.pointerEvents = 'none';
+            nivelSiguiente.style.opacity = 0.5;
+          }
+        }
+      }
+    }
+
+    cargarEstado();
+    manejarActivacionIngles();
+  </script>
+</body>
+</html>
