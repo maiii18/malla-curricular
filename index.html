@@ -3,15 +3,169 @@
 <head>
   <meta charset="UTF-8" />
   <title>Malla Curricular - Sociología</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    .materia {
+      padding: 8px;
+      margin: 4px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .obligatoria {
+      background-color: #ecf0f1;
+    }
+    .electiva {
+      background-color: #d1ecf1;
+    }
+    .ingles {
+      background-color: #fdebd0;
+    }
+    .core {
+      background-color: #e8daef;
+    }
+    .revalidada {
+      background-color: #f5c6cb;
+      text-decoration: line-through;
+    }
+    .completa {
+      text-decoration: line-through;
+      background-color: #d4edda;
+    }
+    .no-asignada {
+      background-color: #fefefe;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
 <body>
   <h1>Malla Curricular - Sociología UCU</h1>
-  <div class="grid">
-    <div class="materia" data-status="pendiente">Introducción a la Sociología</div>
-    <div class="materia" data-status="cursando">Estadística I</div>
-    <div class="materia" data-status="completa">Historia Social y Política</div>
-  </div>
-  <script src="script.js"></script>
+
+  <section id="anio1">
+    <h2>Primer Año - Semestre 1</h2>
+    <div class="materia obligatoria">Análisis matemático</div>
+    <div class="materia obligatoria">Historia contemporánea</div>
+    <div class="materia obligatoria">Filosofía</div>
+    <div class="materia obligatoria">Teoría y métodos</div>
+    <div class="materia obligatoria">Teoría clásica</div>
+    <div class="materia obligatoria">Economía</div>
+    <h2>Primer Año - Semestre 2</h2>
+    <div class="materia obligatoria" data-id="estadistica1">Estadística I</div>
+    <div class="materia obligatoria">Matemática</div>
+    <div class="materia obligatoria">Teoría del cambio</div>
+    <div class="materia obligatoria">Teoría moderna</div>
+    <div class="materia ingles" data-nivel="1">Inglés Nivel 1</div>
+  </section>
+
+  <section id="anio2">
+    <h2>Segundo Año - Semestre 1</h2>
+    <div class="materia obligatoria">Teoría de la acción racional</div>
+    <div class="materia obligatoria">Estadística II</div>
+    <div class="materia obligatoria">Teoría política</div>
+    <div class="materia obligatoria">Diseños cuantitativos</div>
+    <div class="materia obligatoria">Diseños cualitativos</div>
+    <div class="materia ingles" data-nivel="2">Inglés Nivel 2</div>
+    <h2>Segundo Año - Semestre 2</h2>
+    <div class="materia obligatoria">Análisis cuantitativo</div>
+    <div class="materia obligatoria">Métodos aplicados</div>
+    <div class="materia obligatoria">Programación</div>
+    <div class="materia obligatoria">Teoría sociológica</div>
+    <div class="materia ingles" data-nivel="3">Inglés Nivel 3</div>
+  </section>
+
+  <section id="anio3">
+    <h2>Tercer Año - Semestre 1</h2>
+    <p>(Libre para electivas)</p>
+    <div class="materia ingles" data-nivel="4">Inglés Nivel 4</div>
+    <h2>Tercer Año - Semestre 2</h2>
+    <div class="materia obligatoria">Demografía</div>
+    <div class="materia obligatoria">Estratificación social</div>
+    <div class="materia obligatoria">Familias, género</div>
+    <div class="materia obligatoria">Teoría organizaciones</div>
+    <div class="materia obligatoria">Teorías políticas públicas</div>
+    <div class="materia ingles" data-nivel="5">Inglés Nivel 5</div>
+  </section>
+
+  <section id="anio4">
+    <h2>Cuarto Año - Semestre 1</h2>
+    <div class="materia obligatoria">Orientación a la práctica</div>
+    <div class="materia obligatoria">Política y desarrollo</div>
+    <div class="materia obligatoria">Economía política del bienestar</div>
+    <div class="materia ingles" data-nivel="6">Inglés Nivel 6</div>
+    <h2>Cuarto Año - Semestre 2</h2>
+    <div class="materia obligatoria">Crecimiento y desarrollo</div>
+    <div class="materia obligatoria">Ética profesional</div>
+    <div class="materia obligatoria">Práctica profesional</div>
+  </section>
+
+  <section>
+    <h2>Minors - Electivas por elegir</h2>
+    <h3>Minor: Ciencia Política</h3>
+    <div class="materia electiva revalidada">Historia social y política (revalidada)</div>
+    <div class="materia electiva">Teoría Política Contemporánea</div>
+    <div class="materia electiva">Economía Política Internacional</div>
+    <div class="materia electiva">Regímenes y Sistemas de Gobierno</div>
+    <div class="materia electiva">Teoría y análisis de políticas públicas</div>
+    <div class="materia electiva">Integración económica</div>
+    <div class="materia electiva">Derecho político</div>
+
+    <h3>Minor: Criminología</h3>
+    <div class="materia electiva">Psicología de la Personalidad</div>
+    <div class="materia electiva">Privación de libertad en Uruguay</div>
+    <div class="materia electiva">Criminología</div>
+    <div class="materia electiva">El Delito y la Participación Criminal</div>
+    <div class="materia electiva revalidada">Estadística I (revalidada)</div>
+
+    <h3>Minor: Psicobiología del Estrés</h3>
+    <div class="materia electiva">Educación para la Salud</div>
+    <div class="materia electiva">Evaluación: Adultos y Mayores</div>
+    <div class="materia electiva">Evaluación: Niños y Adolescentes</div>
+    <div class="materia electiva">Neurobiología de la Conducta</div>
+    <div class="materia electiva">Procesos Psicológicos Superiores</div>
+    <div class="materia electiva">Psicoinmunología</div>
+  </section>
+
+  <section>
+    <h2>Materias Electivas Futuras</h2>
+    <div class="materia no-asignada">(Ejemplo) Taller de Investigación Avanzada</div>
+    <div class="materia no-asignada">(Ejemplo) Sociología del Cuerpo</div>
+  </section>
+
+  <script>
+    // Marcar como completa o tachar materias
+    document.querySelectorAll('.materia').forEach(m => {
+      m.addEventListener('click', () => {
+        m.classList.toggle('completa');
+        manejarActivacionIngles();
+      });
+    });
+
+    // Activar niveles de inglés
+    function manejarActivacionIngles() {
+      for (let i = 1; i <= 6; i++) {
+        const nivelActual = document.querySelector(`.materia.ingles[data-nivel='${i}']`);
+        const nivelSiguiente = document.querySelector(`.materia.ingles[data-nivel='${i + 1}']`);
+        if (nivelActual && nivelSiguiente) {
+          if (nivelActual.classList.contains('completa')) {
+            nivelSiguiente.style.pointerEvents = 'auto';
+            nivelSiguiente.style.opacity = 1;
+          } else {
+            nivelSiguiente.style.pointerEvents = 'none';
+            nivelSiguiente.style.opacity = 0.5;
+          }
+        }
+      }
+    }
+    manejarActivacionIngles();
+  </script>
 </body>
 </html>
