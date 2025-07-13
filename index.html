@@ -39,7 +39,7 @@
       -webkit-overflow-scrolling: touch;
     }
 
-    /* Cada año es una columna fija */
+    /* Cada sección como columna fija */
     section {
       flex: 0 0 320px;
       background: white;
@@ -47,7 +47,7 @@
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       white-space: normal;
-      margin-bottom: 0; /* quitamos margen para no cortar el scroll */
+      margin-bottom: 0;
     }
 
     .materia {
@@ -102,6 +102,7 @@
   <h1>Malla Curricular - Sociología UCU</h1>
 
   <div class="wrapper-horizontal">
+    <!-- Años -->
     <section id="anio1">
       <h2>Primer Año</h2>
       <h3>Semestre 1</h3>
@@ -161,6 +162,43 @@
       <div class="materia obligatoria">Crecimiento y desarrollo</div>
       <div class="materia obligatoria">Ética profesional</div>
       <div class="materia obligatoria">Práctica profesional</div>
+    </section>
+
+    <!-- Minors -->
+    <section id="minors">
+      <h2>Minors - Electivas por elegir</h2>
+
+      <h3>Minor: Ciencia Política</h3>
+      <div class="materia electiva revalidada">Historia social y política (revalidada)</div>
+      <div class="materia electiva revalidada">Teoría Política Contemporánea (revalidada) </div>
+      <div class="materia electiva">Economía Política Internacional</div>
+      <div class="materia electiva">Regímenes y Sistemas de Gobierno</div>
+      <div class="materia electiva">Teoría y análisis de políticas públicas</div>
+      <div class="materia electiva">Integración económica</div>
+      <div class="materia electiva">Derecho político</div>
+
+      <h3>Minor: Criminología</h3>
+      <div class="materia electiva">Psicología de la Personalidad</div>
+      <div class="materia electiva">Privación de libertad en Uruguay</div>
+      <div class="materia electiva">Criminología</div>
+      <div class="materia electiva">El Delito y la Participación Criminal</div>
+      <div class="materia electiva revalidada">Estadística I (revalidada)</div>
+
+      <h3>Minor: Psicobiología del Estrés</h3>
+      <div class="materia electiva">Educación para la Salud</div>
+      <div class="materia electiva">Evaluación: Adultos y Mayores</div>
+      <div class="materia electiva">Evaluación: Niños y Adolescentes</div>
+      <div class="materia electiva">Neurobiología de la Conducta</div>
+      <div class="materia electiva">Procesos Psicológicos Superiores</div>
+      <div class="materia electiva">Psicoinmunología</div>
+    </section>
+
+    <!-- Core -->
+    <section id="core">
+      <h2>Materias Core</h2>
+      <div class="materia core">Materia Core 1</div>
+      <div class="materia core">Materia Core 2</div>
+      <div class="materia core">Materia Core 3</div>
     </section>
   </div>
 
