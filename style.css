@@ -1,49 +1,99 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #fff8fb;
   overflow-x: hidden;
+  color: #4a2c3a;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 40px;
-  color: #2c3e50;
+  color: #7a3e51;
 }
 
 h2 {
-  background-color: #f0f0f0;
   padding: 10px;
-  border-left: 6px solid #3498db;
+  border-left: 6px solid #d37b8a;
   border-radius: 4px;
   margin-top: 0;
+  color: #7a3e51;
 }
 
-h3 {
-  margin-top: 20px;
-  color: #2c3e50;
-}
-
-/* CONTENEDOR HORIZONTAL */
-body > section {
-  display: inline-block;
-  vertical-align: top;
-  width: 300px;
-  min-height: 100px;
-  margin-right: 20px;
-  white-space: normal;
-}
-
+/* Contenedor horizontal para los años */
 .wrapper-horizontal {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
   gap: 20px;
   padding-bottom: 30px;
+  -webkit-overflow-scrolling: touch;
 }
 
+/* Cada sección de año es una columna */
+section {
+  flex: 0 0 300px;
+  min-height: 100px;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(250, 210, 213, 0.4);
+  white-space: normal;
+}
+
+/* Colores de fondo por año */
+#anio1 { background-color: #FADADD; }
+#anio2 { background-color: #F7C6C7; }
+#anio3 { background-color: #F4A9A8; }
+#anio4 { background-color: #F18284; }
+
+/* Estilos materias */
 .materia {
   padding: 10px 14px;
   margin: 6px;
-  border-radius: 10p
+  border-radius: 10px;
+  font-weight: 600;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(122, 62, 81, 0.1);
+  color: #5a3441;
+  user-select: none;
+}
 
+.materia:hover {
+  transform: scale(1.05);
+  background-color: #f9d8de;
+}
+
+/* Colores según tipo - dentro de las materias */
+.obligatoria { background-color: #f7aeb7; }
+.electiva    { background-color: #f6bccb; }
+.ingles      { background-color: #f9d7e1; color: #6a4050; font-weight: 700; }
+.core        { background-color: #efafc1; }
+.revalidada  { 
+  background-color: #e6a9b8; 
+  text-decoration: line-through;
+  color: #87404a;
+}
+
+/* Materia completa */
+.completa {
+  background-color: #c7d1c7 !important;
+  text-decoration: line-through;
+  color: #555;
+}
+
+/* Scroll horizontal más suave */
+.wrapper-horizontal::-webkit-scrollbar {
+  height: 8px;
+}
+
+.wrapper-horizontal::-webkit-scrollbar-thumb {
+  background-color: #d37b8a;
+  border-radius: 4px;
+}
+
+.wrapper-horizontal::-webkit-scrollbar-track {
+  background: #fde4eb;
+}
