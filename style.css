@@ -1,34 +1,35 @@
+/* Estilo general */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 20px;
-  background-color: #fff0f6;  /* rosa muy suave */
-  color: #70384a;
+  background-color: #fff0f6; /* rosa pastel muy suave */
+  color: #70384a; /* rosa oscuro para texto */
 }
 h1 {
-  color: #5a2142;
+  color: #8b3e61; /* rosa fuerte */
   text-align: center;
   margin-bottom: 40px;
 }
-/* Titulos principales (Primer Año, Segundo Año, etc.) en rosa más fuerte */
 h2 {
-  background-color: #f9c9dd; /* rosa pastel para fondo */
+  background-color: #f9c9dd; /* rosa claro */
   padding: 12px 15px;
   border-radius: 6px;
-  color: #8b3e61; /* rosa oscuro para texto */
+  color: #a84c79; /* rosa medio */
   margin-top: 0;
   margin-bottom: 20px;
   text-align: center;
   font-weight: 700;
   box-shadow: 0 2px 8px rgba(215, 122, 160, 0.4);
-  border: 2px solid #d77aa0;
+  border: 2px solid #d77aa0; /* rosa borde */
 }
 h3 {
   margin-top: 20px;
-  color: #70384a;
+  color: #7a2c52; /* rosa oscuro */
   font-weight: 600;
   margin-bottom: 10px;
 }
 
+/* Contenedor horizontal para años */
 .wrapper-horizontal {
   display: flex;
   flex-wrap: nowrap;
@@ -38,9 +39,10 @@ h3 {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Secciones (años) */
 section {
   flex: 0 0 320px;
-  background: #ffe6f0;  /* fondo rosa pastel */
+  background: #ffe6f0; /* rosa muy claro */
   padding: 15px 20px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(199, 145, 172, 0.25);
@@ -48,6 +50,7 @@ section {
   margin-bottom: 0;
 }
 
+/* Materias */
 .materia {
   padding: 10px 14px;
   margin: 6px 0;
@@ -59,49 +62,105 @@ section {
   box-shadow: 0 2px 6px rgba(199, 145, 172, 0.3);
   color: #70384a;
   user-select: none;
-  background-color: #f9c9dd; /* rosa base materia */
+  background-color: #f9c9dd; /* rosa claro por defecto */
 }
-
 .materia:hover {
   transform: scale(1.05);
-  background-color: #f7b6d1;
+  background-color: #f7b6d1; /* rosa medio */
 }
 
+/* Colores por tipo de materia */
 .obligatoria {
-  background-color: #f9c9dd;
+  background-color: #f9c9dd; /* rosa claro */
 }
 .electiva {
-  background-color: #f7b6d1;
+  background-color: #f7b6d1; /* rosa medio */
 }
 .ingles {
-  background-color: #f4a8c7;
+  background-color: #f4a8c7; /* rosa fuerte */
   color: #5a2142;
   font-weight: 700;
 }
 .core {
-  background-color: #e78bb4;
+  background-color: #e78bb4; /* rosa más oscuro */
+  color: #501a3a;
 }
 .revalidada {
-  background-color: #d7719a;
+  background-color: #d7719a; /* rosa oscuro */
   text-decoration: line-through;
   color: #4a1a34;
 }
 
-/* Cuando está completa (tachada), mantener rosa pero más suave */
+/* Estado completado */
 .completa {
-  background-color: #fce6ef !important;
+  background-color: #fce6ef !important; /* rosa muy suave */
   text-decoration: line-through;
   color: #a84c79;
 }
 
+/* Scroll horizontal */
 .wrapper-horizontal::-webkit-scrollbar {
   height: 8px;
 }
 .wrapper-horizontal::-webkit-scrollbar-thumb {
-  background-color: #d77aa0;
+  background-color: #d77aa0; /* rosa borde */
   border-radius: 4px;
 }
 .wrapper-horizontal::-webkit-scrollbar-track {
-  background: #ffe6f0;
+  background: #ffe6f0; /* rosa muy claro */
 }
 
+/* Sección Core separada */
+#core {
+  max-width: 320px;
+  margin: 40px auto 0 auto;
+  background: #f8d7e0; /* rosa pastel */
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(215, 122, 160, 0.4);
+}
+#core h2 {
+  color: #7a2c52;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Sección Minors y Electivas */
+section.minors {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #ffe6f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(199, 145, 172, 0.25);
+}
+section.minors h2 {
+  color: #a84c79;
+  text-align: center;
+  margin-bottom: 25px;
+  border: 2px solid #d77aa0;
+  background-color: #f9c9dd;
+  border-radius: 6px;
+  padding: 12px 0;
+  box-shadow: 0 2px 8px rgba(215, 122, 160, 0.4);
+  font-weight: 700;
+}
+section.minors h3 {
+  color: #70384a;
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 12px;
+}
+
+/* Materias no asignadas */
+.no-asignada {
+  background-color: #f9c9dd;
+  color: #70384a;
+  font-weight: 600;
+  padding: 10px 14px;
+  margin: 6px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(199, 145, 172, 0.3);
+  cursor: default;
+  user-select: none;
+}
