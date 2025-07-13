@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+  background: #f9f9f9;
+  text-align: center;
+  padding: 20px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+.materia {
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.materia[data-status="pendiente"] {
+  background-color: #f0f0f0;
+}
+.materia[data-status="cursando"] {
+  background-color: #ffe082;
+}
+.materia[data-status="completa"] {
+  background-color: #81c784;
+  text-decoration: line-through;
+}
