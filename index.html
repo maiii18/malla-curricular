@@ -5,140 +5,164 @@
   <title>Malla Curricular - Sociología</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       padding: 20px;
+      background-color: #f9f9f9;
+      overflow-x: hidden;
+      color: #4a2c3a;
     }
-    h1, h2, h3 {
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h2 {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-left: 6px solid #3498db;
+      border-radius: 4px;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    h3 {
+      margin-top: 20px;
       color: #2c3e50;
     }
-    .materia {
-      padding: 8px;
-      margin: 4px;
-      border: 1px solid #aaa;
-      border-radius: 5px;
-      display: inline-block;
-      cursor: pointer;
+
+    /* Contenedor horizontal */
+    .wrapper-horizontal {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 20px;
+      padding-bottom: 30px;
+      -webkit-overflow-scrolling: touch;
     }
-    .obligatoria {
-      background-color: #ecf0f1;
-    }
-    .electiva {
-      background-color: #d1ecf1;
-    }
-    .ingles {
-      background-color: #fdebd0;
-    }
-    .core {
-      background-color: #e8daef;
-    }
-    .revalidada {
-      background-color: #f5c6cb;
-      text-decoration: line-through;
-    }
-    .completa {
-      text-decoration: line-through;
-      background-color: #d4edda;
-    }
-    .no-asignada {
-      background-color: #fefefe;
-    }
+
+    /* Cada año es una columna fija */
     section {
-      margin-bottom: 30px;
+      flex: 0 0 320px;
+      background: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      white-space: normal;
+      margin-bottom: 0; /* quitamos margen para no cortar el scroll */
+    }
+
+    .materia {
+      padding: 10px 14px;
+      margin: 6px 0;
+      border-radius: 10px;
+      font-weight: 600;
+      display: block;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      color: #5a3441;
+      user-select: none;
+    }
+
+    .materia:hover {
+      transform: scale(1.05);
+      background-color: #f0f0f5;
+    }
+
+    /* Colores por tipo */
+    .obligatoria { background-color: #FADADD; }
+    .electiva    { background-color: #F6BCCB; }
+    .ingles      { background-color: #F9D7E1; color: #6a4050; font-weight: 700; }
+    .core        { background-color: #EFAFC1; }
+    .revalidada  { 
+      background-color: #E6A9B8; 
+      text-decoration: line-through;
+      color: #87404a;
+    }
+
+    .completa {
+      background-color: #c7d1c7 !important;
+      text-decoration: line-through;
+      color: #555;
+    }
+
+    /* Scroll horizontal personalizado */
+    .wrapper-horizontal::-webkit-scrollbar {
+      height: 8px;
+    }
+    .wrapper-horizontal::-webkit-scrollbar-thumb {
+      background-color: #d37b8a;
+      border-radius: 4px;
+    }
+    .wrapper-horizontal::-webkit-scrollbar-track {
+      background: #fde4eb;
     }
   </style>
 </head>
 <body>
   <h1>Malla Curricular - Sociología UCU</h1>
 
-  <section id="anio1">
-    <h2>Primer Año - Semestre 1</h2>
-    <div class="materia obligatoria">Análisis matemático</div>
-    <div class="materia obligatoria">Historia contemporánea</div>
-    <div class="materia obligatoria">Filosofía</div>
-    <div class="materia obligatoria">Teoría y métodos</div>
-    <div class="materia obligatoria">Teoría clásica</div>
-    <div class="materia obligatoria">Economía</div>
-    <h2>Primer Año - Semestre 2</h2>
-    <div class="materia obligatoria" data-id="estadistica1">Estadística I</div>
-    <div class="materia obligatoria">Matemática</div>
-    <div class="materia obligatoria">Teoría del cambio</div>
-    <div class="materia obligatoria">Teoría moderna</div>
-    <div class="materia ingles" data-nivel="1">Inglés Nivel 1</div>
-  </section>
+  <div class="wrapper-horizontal">
+    <section id="anio1">
+      <h2>Primer Año</h2>
+      <h3>Semestre 1</h3>
+      <div class="materia obligatoria">Análisis matemático</div>
+      <div class="materia obligatoria">Historia contemporánea</div>
+      <div class="materia obligatoria">Filosofía</div>
+      <div class="materia obligatoria">Teoría y métodos</div>
+      <div class="materia obligatoria">Teoría clásica</div>
+      <div class="materia obligatoria">Economía</div>
+      <h3>Semestre 2</h3>
+      <div class="materia obligatoria" data-id="estadistica1">Estadística I</div>
+      <div class="materia obligatoria">Matemática</div>
+      <div class="materia obligatoria">Teoría del cambio</div>
+      <div class="materia obligatoria">Teoría moderna</div>
+      <div class="materia ingles" data-nivel="1">Inglés Nivel 1</div>
+    </section>
 
-  <section id="anio2">
-    <h2>Segundo Año - Semestre 1</h2>
-    <div class="materia obligatoria">Teoría de la acción racional</div>
-    <div class="materia obligatoria">Estadística II</div>
-    <div class="materia obligatoria">Teoría política</div>
-    <div class="materia obligatoria">Diseños cuantitativos</div>
-    <div class="materia obligatoria">Diseños cualitativos</div>
-    <div class="materia ingles" data-nivel="2">Inglés Nivel 2</div>
-    <h2>Segundo Año - Semestre 2</h2>
-    <div class="materia obligatoria">Análisis cuantitativo</div>
-    <div class="materia obligatoria">Métodos aplicados</div>
-    <div class="materia obligatoria">Programación</div>
-    <div class="materia obligatoria">Teoría sociológica</div>
-    <div class="materia ingles" data-nivel="3">Inglés Nivel 3</div>
-  </section>
+    <section id="anio2">
+      <h2>Segundo Año</h2>
+      <h3>Semestre 1</h3>
+      <div class="materia obligatoria">Teoría de la acción racional</div>
+      <div class="materia obligatoria">Estadística II</div>
+      <div class="materia obligatoria">Teoría política</div>
+      <div class="materia obligatoria">Diseños cuantitativos</div>
+      <div class="materia obligatoria">Diseños cualitativos</div>
+      <div class="materia ingles" data-nivel="2">Inglés Nivel 2</div>
+      <h3>Semestre 2</h3>
+      <div class="materia obligatoria">Análisis cuantitativo</div>
+      <div class="materia obligatoria">Métodos aplicados</div>
+      <div class="materia obligatoria">Programación</div>
+      <div class="materia obligatoria">Teoría sociológica</div>
+      <div class="materia ingles" data-nivel="3">Inglés Nivel 3</div>
+    </section>
 
-  <section id="anio3">
-    <h2>Tercer Año - Semestre 1</h2>
-    <p>(Libre para electivas)</p>
-    <div class="materia ingles" data-nivel="4">Inglés Nivel 4</div>
-    <h2>Tercer Año - Semestre 2</h2>
-    <div class="materia obligatoria">Demografía</div>
-    <div class="materia obligatoria">Estratificación social</div>
-    <div class="materia obligatoria">Familias, género</div>
-    <div class="materia obligatoria">Teoría organizaciones</div>
-    <div class="materia obligatoria">Teorías políticas públicas</div>
-    <div class="materia ingles" data-nivel="5">Inglés Nivel 5</div>
-  </section>
+    <section id="anio3">
+      <h2>Tercer Año</h2>
+      <h3>Semestre 1</h3>
+      <p>(Libre para electivas)</p>
+      <div class="materia ingles" data-nivel="4">Inglés Nivel 4</div>
+      <h3>Semestre 2</h3>
+      <div class="materia obligatoria">Demografía</div>
+      <div class="materia obligatoria">Estratificación social</div>
+      <div class="materia obligatoria">Familias, género</div>
+      <div class="materia obligatoria">Teoría organizaciones</div>
+      <div class="materia obligatoria">Teorías políticas públicas</div>
+      <div class="materia ingles" data-nivel="5">Inglés Nivel 5</div>
+    </section>
 
-  <section id="anio4">
-    <h2>Cuarto Año - Semestre 1</h2>
-    <div class="materia obligatoria">Orientación a la práctica</div>
-    <div class="materia obligatoria">Política y desarrollo</div>
-    <div class="materia obligatoria">Economía política del bienestar</div>
-    <div class="materia ingles" data-nivel="6">Inglés Nivel 6</div>
-    <h2>Cuarto Año - Semestre 2</h2>
-    <div class="materia obligatoria">Crecimiento y desarrollo</div>
-    <div class="materia obligatoria">Ética profesional</div>
-    <div class="materia obligatoria">Práctica profesional</div>
-  </section>
-
-  <section>
-    <h2>Minors - Electivas por elegir</h2>
-    <h3>Minor: Ciencia Política</h3>
-    <div class="materia electiva revalidada">Historia social y política (revalidada)</div>
-    <div class="materia electiva">Teoría Política Contemporánea</div>
-    <div class="materia electiva">Economía Política Internacional</div>
-    <div class="materia electiva">Regímenes y Sistemas de Gobierno</div>
-    <div class="materia electiva">Teoría y análisis de políticas públicas</div>
-    <div class="materia electiva">Integración económica</div>
-    <div class="materia electiva">Derecho político</div>
-
-    <h3>Minor: Criminología</h3>
-    <div class="materia electiva">Psicología de la Personalidad</div>
-    <div class="materia electiva">Privación de libertad en Uruguay</div>
-    <div class="materia electiva">Criminología</div>
-    <div class="materia electiva">El Delito y la Participación Criminal</div>
-    <div class="materia electiva revalidada">Estadística I (revalidada)</div>
-
-    <h3>Minor: Psicobiología del Estrés</h3>
-    <div class="materia electiva">Educación para la Salud</div>
-    <div class="materia electiva">Evaluación: Adultos y Mayores</div>
-    <div class="materia electiva">Evaluación: Niños y Adolescentes</div>
-    <div class="materia electiva">Neurobiología de la Conducta</div>
-    <div class="materia electiva">Procesos Psicológicos Superiores</div>
-    <div class="materia electiva">Psicoinmunología</div>
-  </section>
-
-  <section>
-    <h2>Materias Electivas Futuras</h2>
-    <div class="materia no-asignada">(Ejemplo) Taller de Investigación Avanzada</div>
-    <div class="materia no-asignada">(Ejemplo) Sociología del Cuerpo</div>
-  </section>
+    <section id="anio4">
+      <h2>Cuarto Año</h2>
+      <h3>Semestre 1</h3>
+      <div class="materia obligatoria">Orientación a la práctica</div>
+      <div class="materia obligatoria">Política y desarrollo</div>
+      <div class="materia obligatoria">Economía política del bienestar</div>
+      <div class="materia ingles" data-nivel="6">Inglés Nivel 6</div>
+      <h3>Semestre 2</h3>
+      <div class="materia obligatoria">Crecimiento y desarrollo</div>
+      <div class="materia obligatoria">Ética profesional</div>
+      <div class="materia obligatoria">Práctica profesional</div>
+    </section>
+  </div>
 
   <script>
     // Marcar como completa o tachar materias
@@ -165,119 +189,7 @@
         }
       }
     }
-    manejarActivacionIngles();
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>Malla Curricular - Sociología</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      padding: 20px;
-      background-color: #f9f9f9;
-    }
-    h1 {
-      color: #2c3e50;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    h2 {
-      background-color: #f0f0f0;
-      padding: 10px;
-      border-left: 6px solid #3498db;
-      border-radius: 4px;
-      margin-top: 40px;
-    }
-    h3 {
-      margin-top: 20px;
-      color: #2c3e50;
-    }
-    .materia {
-      padding: 10px 14px;
-      margin: 6px;
-      border-radius: 10px;
-      border: none;
-      font-weight: 500;
-      display: inline-block;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    .materia:hover {
-      transform: scale(1.03);
-      background-color: #e0e0e0;
-    }
-    .obligatoria { background-color: #d0e6f7; }
-    .electiva { background-color: #fde2e4; }
-    .ingles { background-color: #fff0c1; }
-    .core { background-color: #e8daef; }
-    .revalidada {
-      background-color: #f5c6cb;
-      text-decoration: line-through;
-    }
-    .completa {
-      background-color: #d4edda !important;
-      text-decoration: line-through;
-      color: #555;
-    }
-    section {
-      margin-bottom: 40px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Malla Curricular - Sociología UCU</h1>
 
-  <!-- Aquí siguen todas las secciones y materias como estaban antes -->
-
-  <!-- El script interactivo -->
-  <script>
-    const STORAGE_KEY = 'materiasCompletas';
-
-    function guardarEstado() {
-      const materiasCompletas = Array.from(document.querySelectorAll('.materia.completa'))
-        .map(m => m.textContent.trim());
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(materiasCompletas));
-    }
-
-    function cargarEstado() {
-      const guardadas = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-      document.querySelectorAll('.materia').forEach(m => {
-        if (guardadas.includes(m.textContent.trim())) {
-          m.classList.add('completa');
-        }
-      });
-    }
-
-    document.querySelectorAll('.materia').forEach(m => {
-      m.addEventListener('click', () => {
-        m.classList.toggle('completa');
-        guardarEstado();
-        manejarActivacionIngles();
-      });
-    });
-
-    function manejarActivacionIngles() {
-      for (let i = 1; i <= 6; i++) {
-        const nivelActual = document.querySelector(`.materia.ingles[data-nivel='${i}']`);
-        const nivelSiguiente = document.querySelector(`.materia.ingles[data-nivel='${i + 1}']`);
-        if (nivelActual && nivelSiguiente) {
-          if (nivelActual.classList.contains('completa')) {
-            nivelSiguiente.style.pointerEvents = 'auto';
-            nivelSiguiente.style.opacity = 1;
-          } else {
-            nivelSiguiente.style.pointerEvents = 'none';
-            nivelSiguiente.style.opacity = 0.5;
-          }
-        }
-      }
-    }
-
-    cargarEstado();
     manejarActivacionIngles();
   </script>
 </body>
