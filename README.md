@@ -1,2 +1,2 @@
-# sociolgia
-sociología UCU
+# Sociolgia
+Sociología UCU
