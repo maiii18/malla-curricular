@@ -1,2 +1,2 @@
-# malla-curricular
-Malla curricular sociología UCU
+# sociolgia
+sociología UCU
