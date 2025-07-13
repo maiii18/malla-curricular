@@ -1,26 +1,27 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 20px;
-  background-color: #fff8fb;
-  overflow-x: hidden;
-  color: #4a2c3a;
+  background-color: #fff0f6;  /* rosa muy suave */
+  color: #70384a;
 }
-
 h1 {
+  color: #5a2142;
   text-align: center;
   margin-bottom: 40px;
-  color: #7a3e51;
 }
-
 h2 {
+  background-color: #f9d5e5; /* rosa claro */
   padding: 10px;
-  border-left: 6px solid #d37b8a;
+  border-left: 6px solid #d77aa0; /* borde rosa oscuro */
   border-radius: 4px;
   margin-top: 0;
-  color: #7a3e51;
+  margin-bottom: 15px;
+}
+h3 {
+  margin-top: 20px;
+  color: #70384a;
 }
 
-/* Contenedor horizontal para los años */
 .wrapper-horizontal {
   display: flex;
   flex-wrap: nowrap;
@@ -30,70 +31,69 @@ h2 {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Cada sección de año es una columna */
 section {
-  flex: 0 0 300px;
-  min-height: 100px;
-  background: white;
+  flex: 0 0 320px;
+  background: #ffe6f0;  /* fondo rosa pastel */
   padding: 15px 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(250, 210, 213, 0.4);
+  box-shadow: 0 4px 10px rgba(199, 145, 172, 0.25);
   white-space: normal;
+  margin-bottom: 0;
 }
 
-/* Colores de fondo por año */
-#anio1 { background-color: #FADADD; }
-#anio2 { background-color: #F7C6C7; }
-#anio3 { background-color: #F4A9A8; }
-#anio4 { background-color: #F18284; }
-
-/* Estilos materias */
 .materia {
   padding: 10px 14px;
-  margin: 6px;
+  margin: 6px 0;
   border-radius: 10px;
   font-weight: 600;
-  display: inline-block;
+  display: block;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 2px 6px rgba(122, 62, 81, 0.1);
-  color: #5a3441;
+  box-shadow: 0 2px 6px rgba(199, 145, 172, 0.3);
+  color: #70384a;
   user-select: none;
+  background-color: #f9c9dd; /* rosa base materia */
 }
 
 .materia:hover {
   transform: scale(1.05);
-  background-color: #f9d8de;
+  background-color: #f7b6d1;
 }
 
-/* Colores según tipo - dentro de las materias */
-.obligatoria { background-color: #f7aeb7; }
-.electiva    { background-color: #f6bccb; }
-.ingles      { background-color: #f9d7e1; color: #6a4050; font-weight: 700; }
-.core        { background-color: #efafc1; }
-.revalidada  { 
-  background-color: #e6a9b8; 
+.obligatoria {
+  background-color: #f9c9dd;
+}
+.electiva {
+  background-color: #f7b6d1;
+}
+.ingles {
+  background-color: #f4a8c7;
+  color: #5a2142;
+  font-weight: 700;
+}
+.core {
+  background-color: #e78bb4;
+}
+.revalidada {
+  background-color: #d7719a;
   text-decoration: line-through;
-  color: #87404a;
+  color: #4a1a34;
 }
 
-/* Materia completa */
+/* Cuando está completa (tachada), mantener rosa pero más suave */
 .completa {
-  background-color: #c7d1c7 !important;
+  background-color: #fce6ef !important;
   text-decoration: line-through;
-  color: #555;
+  color: #a84c79;
 }
 
-/* Scroll horizontal más suave */
 .wrapper-horizontal::-webkit-scrollbar {
   height: 8px;
 }
-
 .wrapper-horizontal::-webkit-scrollbar-thumb {
-  background-color: #d37b8a;
+  background-color: #d77aa0;
   border-radius: 4px;
 }
-
 .wrapper-horizontal::-webkit-scrollbar-track {
-  background: #fde4eb;
+  background: #ffe6f0;
 }
