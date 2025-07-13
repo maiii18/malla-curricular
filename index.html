@@ -7,33 +7,32 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       padding: 20px;
-      background-color: #fff0f6;
-      color: #70384a;
+      background-color: #fff0f6; /* rosa pastel muy suave */
+      color: #70384a; /* rosa oscuro para texto */
     }
     h1 {
-      color: #5a2142;
+      color: #8b3e61; /* rosa fuerte */
       text-align: center;
       margin-bottom: 40px;
     }
     h2 {
-      background-color: #f9c9dd;
+      background-color: #f9c9dd; /* rosa claro */
       padding: 12px 15px;
       border-radius: 6px;
-      color: #8b3e61;
+      color: #a84c79; /* rosa medio */
       margin-top: 0;
       margin-bottom: 20px;
       text-align: center;
       font-weight: 700;
       box-shadow: 0 2px 8px rgba(215, 122, 160, 0.4);
-      border: 2px solid #d77aa0;
+      border: 2px solid #d77aa0; /* rosa borde */
     }
     h3 {
       margin-top: 20px;
-      color: #70384a;
+      color: #7a2c52; /* rosa oscuro */
       font-weight: 600;
       margin-bottom: 10px;
     }
-
     .wrapper-horizontal {
       display: flex;
       flex-wrap: nowrap;
@@ -42,17 +41,15 @@
       padding-bottom: 30px;
       -webkit-overflow-scrolling: touch;
     }
-
     section {
       flex: 0 0 320px;
-      background: #ffe6f0;
+      background: #ffe6f0; /* rosa muy claro */
       padding: 15px 20px;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(199, 145, 172, 0.25);
       white-space: normal;
       margin-bottom: 0;
     }
-
     .materia {
       padding: 10px 14px;
       margin: 6px 0;
@@ -64,69 +61,73 @@
       box-shadow: 0 2px 6px rgba(199, 145, 172, 0.3);
       color: #70384a;
       user-select: none;
-      background-color: #f9c9dd;
+      background-color: #f9c9dd; /* rosa claro por defecto */
     }
     .materia:hover {
       transform: scale(1.05);
-      background-color: #f7b6d1;
+      background-color: #f7b6d1; /* rosa medio */
     }
-
-    /* Colores por tipo */
     .obligatoria {
-      background-color: #f9c9dd;
+      background-color: #f9c9dd; /* rosa claro */
     }
     .electiva {
-      background-color: #f7b6d1;
+      background-color: #f7b6d1; /* rosa medio */
     }
     .ingles {
-      background-color: #f4a8c7;
+      background-color: #f4a8c7; /* rosa fuerte */
       color: #5a2142;
       font-weight: 700;
     }
     .core {
-      background-color: #e78bb4;
+      background-color: #e78bb4; /* rosa más oscuro */
       color: #501a3a;
     }
     .revalidada {
-      background-color: #d7719a;
+      background-color: #d7719a; /* rosa oscuro */
       text-decoration: line-through;
       color: #4a1a34;
     }
-
     .completa {
-      background-color: #fce6ef !important;
+      background-color: #fce6ef; /* rosa muy suave */
       text-decoration: line-through;
       color: #a84c79;
+      cursor: pointer; /* para que siga siendo clickable */
     }
-
-    /* Scroll horizontal */
+    .no-asignada {
+      background-color: #f9c9dd;
+      color: #70384a;
+      font-weight: 600;
+      padding: 10px 14px;
+      margin: 6px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(199, 145, 172, 0.3);
+      cursor: text;
+      user-select: text;
+      min-height: 30px;
+    }
     .wrapper-horizontal::-webkit-scrollbar {
       height: 8px;
     }
     .wrapper-horizontal::-webkit-scrollbar-thumb {
-      background-color: #d77aa0;
+      background-color: #d77aa0; /* rosa borde */
       border-radius: 4px;
     }
     .wrapper-horizontal::-webkit-scrollbar-track {
-      background: #ffe6f0;
+      background: #ffe6f0; /* rosa muy claro */
     }
-
-    /* Core separado abajo */
     #core {
       max-width: 320px;
       margin: 40px auto 0 auto;
-      background:#f8d7e0;
-      padding:15px 20px;
-      border-radius:8px;
+      background: #f8d7e0; /* rosa pastel */
+      padding: 15px 20px;
+      border-radius: 8px;
       box-shadow: 0 4px 8px rgba(215, 122, 160, 0.4);
     }
     #core h2 {
-      color:#7a2c52;
-      text-align:center;
+      color: #7a2c52;
+      text-align: center;
       margin-bottom: 15px;
     }
-
-    /* Minors y electivas */
     section.minors {
       max-width: 700px;
       margin: 40px auto;
@@ -136,7 +137,7 @@
       box-shadow: 0 4px 10px rgba(199, 145, 172, 0.25);
     }
     section.minors h2 {
-      color: #8b3e61;
+      color: #a84c79;
       text-align: center;
       margin-bottom: 25px;
       border: 2px solid #d77aa0;
@@ -152,27 +153,12 @@
       margin-top: 25px;
       margin-bottom: 12px;
     }
-
-    /* Materias no asignadas */
-    .no-asignada {
-      background-color: #f9c9dd;
-      color: #70384a;
-      font-weight: 600;
-      padding: 10px 14px;
-      margin: 6px 0;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(199, 145, 172, 0.3);
-      cursor: default;
-      user-select: none;
-    }
-
   </style>
 </head>
 <body>
   <h1>Malla Curricular - Sociología UCU</h1>
 
   <div class="wrapper-horizontal">
-    <!-- Primer Año -->
     <section id="anio1">
       <h2>Primer Año</h2>
       <h3>Semestre 1</h3>
@@ -182,7 +168,6 @@
       <div class="materia obligatoria">Teoría y métodos</div>
       <div class="materia obligatoria">Teoría clásica</div>
       <div class="materia obligatoria">Economía</div>
-
       <h3>Semestre 2</h3>
       <div class="materia obligatoria" data-id="estadistica1">Estadística I</div>
       <div class="materia obligatoria">Matemática</div>
@@ -191,7 +176,6 @@
       <div class="materia ingles" data-nivel="1">Inglés Nivel 1</div>
     </section>
 
-    <!-- Segundo Año -->
     <section id="anio2">
       <h2>Segundo Año</h2>
       <h3>Semestre 1</h3>
@@ -201,7 +185,6 @@
       <div class="materia obligatoria">Diseños cuantitativos</div>
       <div class="materia obligatoria">Diseños cualitativos</div>
       <div class="materia ingles" data-nivel="2">Inglés Nivel 2</div>
-
       <h3>Semestre 2</h3>
       <div class="materia obligatoria">Análisis cuantitativo</div>
       <div class="materia obligatoria">Métodos aplicados</div>
@@ -210,13 +193,11 @@
       <div class="materia ingles" data-nivel="3">Inglés Nivel 3</div>
     </section>
 
-    <!-- Tercer Año -->
     <section id="anio3">
       <h2>Tercer Año</h2>
       <h3>Semestre 1</h3>
       <p>(Libre para electivas)</p>
       <div class="materia ingles" data-nivel="4">Inglés Nivel 4</div>
-
       <h3>Semestre 2</h3>
       <div class="materia obligatoria">Demografía</div>
       <div class="materia obligatoria">Estratificación social</div>
@@ -226,7 +207,6 @@
       <div class="materia ingles" data-nivel="5">Inglés Nivel 5</div>
     </section>
 
-    <!-- Cuarto Año -->
     <section id="anio4">
       <h2>Cuarto Año</h2>
       <h3>Semestre 1</h3>
@@ -234,7 +214,6 @@
       <div class="materia obligatoria">Política y desarrollo</div>
       <div class="materia obligatoria">Economía política del bienestar</div>
       <div class="materia ingles" data-nivel="6">Inglés Nivel 6</div>
-
       <h3>Semestre 2</h3>
       <div class="materia obligatoria">Crecimiento y desarrollo</div>
       <div class="materia obligatoria">Ética profesional</div>
@@ -242,18 +221,8 @@
     </section>
   </div>
 
-  <!-- Core -->
-  <section id="core">
-    <h2>Materias Core</h2>
-    <div class="materia core">Creencias y Políticos: Ayer y Hoy</div>
-    <div class="materia core">Mentes, Cerebros y Máquinas</div>
-    <div class="materia core">Desafíos de la Pobreza</div>
-  </section>
-
-  <!-- Minors -->
   <section class="minors">
     <h2>Minors - Electivas por elegir</h2>
-
     <h3>Minor: Ciencia Política</h3>
     <div class="materia electiva revalidada">Historia social y política (revalidada)</div>
     <div class="materia electiva">Teoría Política Contemporánea</div>
@@ -279,8 +248,96 @@
     <div class="materia electiva">Psicoinmunología</div>
   </section>
 
+  <section id="core">
+    <h2>Materias Core</h2>
+    <div class="materia core">Creencias y Políticos: Ayer y Hoy</div>
+    <div class="materia core">Mentes, Cerebros y Máquinas</div>
+    <div class="materia core">Desafíos de la Pobreza</div>
+  </section>
+
   <section>
     <h2>Materias Electivas Futuras</h2>
-    <div class="materia no-asignada">(Ejemplo) Taller de Investigación Avanzada</div>
-    <div class="materia no-asignada">(Ejemplo) Sociología del Cuerpo</div
+    <div class="materia no-asignada" contenteditable="true" spellcheck="false">Taller de Investigación Avanzada</div>
+    <div class="materia no-asignada" contenteditable="true" spellcheck="false">Sociología del Cuerpo</div>
+  </section>
 
+  <script>
+    const STORAGE_KEY = 'materiasCompletas';
+    const FUTURAS_KEY = 'materiasFuturasNombres';
+
+    // Guardar estado de materias completas y nombres electivas futuras
+    function guardarEstado() {
+      const materiasCompletas = Array.from(document.querySelectorAll('.materia.completa'))
+        .map(m => m.textContent.trim());
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(materiasCompletas));
+
+      // Guardar nombres electivas futuras editadas
+      const electivasFuturas = Array.from(document.querySelectorAll('.materia.no-asignada'));
+      const nombres = electivasFuturas.map(div => div.textContent.trim());
+      localStorage.setItem(FUTURAS_KEY, JSON.stringify(nombres));
+    }
+
+    // Cargar estado
+    function cargarEstado() {
+      const guardadas = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+      document.querySelectorAll('.materia').forEach(m => {
+        if (guardadas.includes(m.textContent.trim())) {
+          m.classList.add('completa');
+        }
+      });
+
+      const nombresGuardados = JSON.parse(localStorage.getItem(FUTURAS_KEY));
+      if (nombresGuardados) {
+        const electivasFuturas = document.querySelectorAll('.materia.no-asignada');
+        electivasFuturas.forEach((div, i) => {
+          if (nombresGuardados[i]) {
+            div.textContent = nombresGuardados[i];
+          }
+        });
+      }
+    }
+
+    // Marcar/tachar materias y actualizar inglés
+    document.querySelectorAll('.materia').forEach(m => {
+      m.addEventListener('click', () => {
+        if (!m.classList.contains('no-asignada')) {
+          m.classList.toggle('completa');
+          guardarEstado();
+          manejarActivacionIngles();
+        }
+      });
+    });
+
+    // Guardar cambios de texto en electivas futuras
+    document.querySelectorAll('.materia.no-asignada').forEach(div => {
+      div.addEventListener('input', () => {
+        guardarEstado();
+      });
+    });
+
+    // Controlar activación niveles de inglés
+    function manejarActivacionIngles() {
+      for (let i = 1; i <= 6; i++) {
+        const nivelActual = document.querySelector(`.materia.ingles[data-nivel='${i}']`);
+        const nivelSiguiente = document.querySelector(`.materia.ingles[data-nivel='${i + 1}']`);
+        if (nivelActual && nivelSiguiente) {
+          if (nivelActual.classList.contains('completa')) {
+            nivelSiguiente.style.pointerEvents = 'auto';
+            nivelSiguiente.style.opacity = '1';
+          } else {
+            nivelSiguiente.style.pointerEvents = 'none';
+            nivelSiguiente.style.opacity = '0.5';
+            if (nivelSiguiente.classList.contains('completa')) {
+              nivelSiguiente.classList.remove('completa');
+            }
+          }
+        }
+      }
+    }
+
+    // Inicializar
+    cargarEstado();
+    manejarActivacionIngles();
+  </script>
+</body>
+</html>
